@@ -1,0 +1,21 @@
+  <h1 class="display-3" style="text-align: center;">Reporte de ventas</h1>
+    <h1 class="w3-xxxlarge w3-text-blue-gray" style="text-align: center;"><b>{{fecha}}</b></h1>
+
+<table id="myTable" class="table table-striped table-responsive-md btn-table" style="background-color: #ffff;">
+    <thead>
+        <tr>
+            <th class="th-sm">Fecha</th>
+            <th class="th-sm">Ventas totales</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {{#reporteg}}
+        <tr> <br>
+            <td>{{fecha}}</td>
+            <td>${{ventastotales}}</td>
+        </tr>
+        {{/reporteg}}
+    </tbody>
+</table>
+        <a href="/api/admin"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>

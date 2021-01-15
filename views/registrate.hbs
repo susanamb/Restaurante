@@ -1,0 +1,40 @@
+<body>
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+          <!-- Tabs Titles -->
+          <a href="/"><h2 class="inactive underlineHover"> Inicia Sesion </h2></a>
+          <h2 class="active">Registrate</h2>
+      
+          <!-- Icon -->
+          <div class="fadeIn first">
+            <img src="/img/taquero.jpg" id="icon" alt="User Icon" />
+          </div>
+          {{#if message }}
+        <div class="alert alert-warning" role="alert">
+          <h1> {{message}}</h1>
+        </div>
+        {{/if}}
+          <!-- Login Form -->
+          <form action="/api/registro" method="POST">
+            <input type="text" id="login" class="fadeIn second" name="usuario" placeholder="Usuario" maxlength="15" required>
+            <input type="text" id="login" class="fadeIn second" name="nombre" placeholder="Nombre" maxlength="15" required> <br>
+            <input type="text" id="login" class="fadeIn second" name="apellido" placeholder="Apellido" maxlength="15" required> <br>
+            <label for="puesto">Puesto &nbsp &nbsp</label><select class="fadeIn second" id="login" name="puesto" style="width: 180px;">
+              <option>Mesero</option>
+              <option>Taquero</option>
+              <option>Cajero</option>
+              
+          </select><br>
+            <input type="password" id="password" class="fadeIn third" name="clave" placeholder="Clave" pattern="[A-Za-z0-9_-]{1,15}" maxlength="10" required>
+            <input type="password" id="confirmapassword" class="fadeIn third" name="confirmaclave" placeholder="Confirma clave" pattern="[A-Za-z0-9_-]{1,15}" maxlength="10" required>
+
+            <input type="password" id="login" class="fadeIn second" name="claveg" placeholder="Clave Gerente" required>
+            <a href="api/login"><input type="submit" class="fadeIn fourth"  value="Guardar"/></a>
+          </form>
+      
+      
+        </div>
+        
+      </div>
+
+  </body>

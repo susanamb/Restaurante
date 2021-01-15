@@ -1,0 +1,36 @@
+<body style="background-image:url(https://img.wallpapersafari.com/desktop/1920/1080/59/90/U8BH5o.jpg)">
+    <br><br><br>
+    <h1 class="display-3" style="text-align: center;">Usuarios</h1>
+<table id="myTable" class="table table-striped table-responsive-md btn-table" style="background-color: #ffff;">
+    <thead>
+        <tr>
+            <th class="th-sm">Usuario</th>
+            <th class="th-sm">Nombre</th>
+            <th class="th-sm">Apellido</th>
+            <th class="th-sm">Cargo</th>
+            <th class="th-sm">Opciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {{#usuarios}}
+        <tr> <br>
+            <td>{{usuario}}</td>
+            <td>{{nombre}}</td>
+            <td>{{apellido}}</td>
+            <td>{{puesto}}</td>
+            <td>
+                <form action="/api/usuario/{{usuario}}" method="GET">
+                    <button class= "btn btn-primary" type="submit">Editar</button>
+                </form>
+            </td>
+            <td>
+                <a href="/api/borrausuario/{{usuario}}" class="btn btn-primary">Eliminar</a>
+            </td>
+        </tr>
+        {{/usuarios}}
+    </tbody>
+</table>
+        <a href="/admin"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>
+
+</body>

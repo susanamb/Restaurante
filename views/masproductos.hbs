@@ -1,0 +1,66 @@
+<body>
+    <div class="w3-container" style="margin-top:80px; margin-left: 10%;" id="showcase">
+    <h1 class="w3-jumbo"><b>Administrativo</b></h1>
+    <h1 class="w3-xxxlarge w3-text-blue-gray"><b>Productos</b></h1>
+    <hr style="width:50px;border:5px solid paleturquoise" class="w3-round">
+  </div> 
+  <div class="w3-row-padding">
+      {{#if message }}
+        <div class="alert alert-warning" role="alert" style="width: 100%;">
+          <h1> {{message}}</h1>
+        </div>
+        {{/if}}
+
+<form action="/api/productos" method="POST">
+    <div class="centertable">
+    <table class="w3-ul w3-light-grey w3-center" style="width: 70%; border:1;" border="1">       
+        <tr>
+            <td>Id</td>
+            <td><input type="text" id="login" class="fadeIn second" disable name="id" placeholder="Id"></td>
+        </tr>
+        <tr>
+            <td>Nombre</td>
+           <td> <input type="text" id="login" class="fadeIn second" name="nombre" placeholder="Nombre" required></td>
+        </tr>
+        <tr>
+            <td>Codigo</td>
+            <td><input type="number" id="login" class="fadeIn second" name="codigo" pattern="[0-9]{10}" placeholder="Codigo 10digitos" required></td>
+        </tr>
+        <tr>
+            <td>Unidad</td>
+           <td> <select class="fadeIn second" id="login" name="unidad" required style="width: 180px;">
+              <option>Otro</option>
+              <option>Kg</option>
+              <option>Pieza</option>             
+          </select>
+          </td>
+        </tr>
+        <tr>
+            <td>Categoria</td>
+           <td> <select class="fadeIn second" id="login" name="categoria" required style="width: 180px;">
+              <option>Otro</option>
+              <option>bebida</option>
+              <option>Ingrediente</option>             
+          </select>
+          </td>
+        </tr>
+        <tr>
+            <td>Precio</td>
+            <td><input type="number" id="login" class="fadeIn second" name="precio" placeholder="Precio" required></td>
+        </tr>
+        <tr>
+            <td>Imagen</td>
+            <td><input type="file" id="login" class="fadeIn second" name="img" placeholder="imagen"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><a href="confirma"><input type="submit" class="fadeIn fourth" name="accion" value="Guarda"/></a></td>
+        </tr>
+    </table>
+   
+</form>
+</div>
+</div>
+<div style="float: right; width: 30%;">
+        <a href="/admin"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>
+</div>
+</body>

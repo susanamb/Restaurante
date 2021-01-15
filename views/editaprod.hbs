@@ -1,0 +1,74 @@
+<body>
+    <div class="w3-container" style="margin-top:80px; margin-left: 15%;" id="showcase">
+    <h1 class="w3-jumbo"><b>Registro Final</b></h1>
+    <h1 class="w3-xxxlarge w3-text-blue-gray"><b>Productos</b></h1>
+    <hr style="width:50px;border:5px solid paleturquoise" class="w3-round">
+  </div> 
+  <div class="w3-row-padding" style="margin-left:10%">
+      {{#if message }}
+        <div class="alert alert-success" role="alert" style="width: 70%;">
+          <h1> {{message}}</h1>
+        </div>
+        {{/if}}
+{{#producto}}
+<form action="/api/producto/{{id}}?_method=PUT" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+
+    <table class="w3-ul w3-light-grey w3-center" style="width: 70%; border:1;" border="1">       
+        <tr>
+            <td>Id</td>
+            <td><input type="text" id="login" class="fadeIn second" disabled name="id" value="{{id}}" ></td>
+        </tr>
+        <tr>
+            <td>Nombre</td>
+           <td> <input type="text" id="login" class="fadeIn second" name="nombre" value="{{nombre}}" required></td>
+        </tr>
+        <tr>
+            <td>Codigo</td>
+            <td><input type="number" id="login" class="fadeIn second" disabled name="codigo" value="{{codigo}}" ></td>
+        </tr>
+        <tr>
+            <td>Precio</td>
+            <td><input type="number" id="login" class="fadeIn second" name="precio" value="{{precio}}" required></td>
+        </tr>
+        <tr>
+            <td>Existencias</td>
+            <td><input type="number" id="login" class="fadeIn second" name="cantidad" value="{{cantidad}}" required></td>
+        </tr>
+        <tr> 
+            <td><div class="form-group">
+        <label for="_id">Categoria</label></td>
+        <td>
+        <select class= "form-group" name="cat" id="category">
+            <option selected>{{categoria}}</option>
+            <option >bebida</option>
+            <option >Ingrediente</option>
+            <option >Otro</option>
+        </select></td>
+    </div></tr>
+        <tr> 
+            <td><div class="form-group">
+        <label for="_id">Unidad</label></td>
+        <td>
+        <select class= "form-group" name="unidad" id="category">
+            <option selected>{{unidad}}</option>
+            <option >Pieza</option>
+            <option >Kg</option>
+            <option >Otro</option>
+        </select></td>
+    </div></tr>
+        <tr>
+            <td colspan="2"><input type="submit" name="accion" value="Modifica" class="btn btn-primary">
+             
+            </td>
+        </tr>
+        {{/producto}}
+
+    </table>
+   
+</form>
+</div>
+<div style="float: right; width: 30%;">
+    <a href="/api/admin"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>
+</div>
+</body>

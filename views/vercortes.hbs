@@ -1,0 +1,26 @@
+<br><br><br>
+    <h1 class="display-3" style="text-align: center;">Cortes cajeros</h1>
+<table id="myTable" class="table table-striped table-responsive-md btn-table" style="background-color: #ffff;">
+    <thead>
+        <tr>
+            <th class="th-sm">Usuario</th>
+            <th class="th-sm">Moneda Nacional</th>
+            <th class="th-sm">Dolar</th>
+            <th class="th-sm">Total en caja</th>
+            <th class="th-sm">Resultado</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {{#corte}}
+        <tr> <br>
+            <td>{{usuario}}</td>
+            <td>{{mn}}</td>
+            <td>{{dll}}</td>
+            <td>{{totalef}}</td>
+            <td>{{res}}</td>           
+        </tr>
+        {{/corte}}
+    </tbody>
+</table>
+        <a href="/api/admin"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>

@@ -1,0 +1,67 @@
+<div class="w3-container" style="margin-top:80px; margin-left: 10%;" id="showcase">
+    <h1 class="w3-jumbo"><b>Corte de caja</b></h1>
+    <h1 class="w3-xxxlarge w3-text-blue-gray"><b>Cajero(a)</b></h1>
+    <hr style="width:50px;border:5px solid paleturquoise" class="w3-round">
+  </div>
+  
+  <div class="w3-row-padding">
+    <div class="w3-half w3-margin-bottom w3-xxxlarge">
+        {{#if messages.error}}
+        <div class="alert alert-warning" role="alert">
+          <h1> {{messages.error}}</h1>
+        </div>
+        {{/if}}
+    <form action="/api/cortecaja" method="POST">
+    <div class="centertable">
+        <table class=" w3-light-grey w3-center" style="width: 70%; border:1; font-size:80%">
+            <tr >
+                <td colspan=2>Billetes M.N</td>
+                <td colspan=2>Billetes Dolar</td>
+            </tr>
+            <tr>
+                <td>$20=</td>
+                <td><input class="w3-xlarge" type="number" name="veinte" id="" value="0"></td>
+                <td>$1=</td>
+                <td><input class="w3-xlarge" type="number" name="und" id="" value="0"></td>  
+            </tr>
+            <tr>
+                <td>$50=</td>
+                <td><input class="w3-xlarge" type="number" name="cincuenta" id="" value="0"></td>
+                <td>$5=</td>
+                <td><input class="w3-xlarge" type="number" name="cincod" id="" value="0"></td>
+            </tr>
+            <tr>
+                <td>$100=</td>
+                <td><input class="w3-xlarge" type="number" name="cien" id="" value="0"></td>
+                <td>$10=</td>
+                <td><input class="w3-xlarge" type="number" name="diezd" id="" value="0"></td>
+            </tr>
+            <tr>
+                <td>$200=</td>
+                <td><input class="w3-xlarge" type="number" name="doscientos" id="" value="0"></td>
+                <td>$20=</td>
+                <td><input class="w3-xlarge" type="number" name="veinted" id="" value="0"></td>
+            </tr>
+            <tr>
+                <td>$500=</td>
+                <td><input class="w3-xlarge" type="number" name="quinientos" id="" value="0"></td>
+                <td>$50=</td>
+                <td><input class="w3-xlarge" type="number" name="cincuentad" id="" value="0"></td>
+            </tr>
+            <tr>
+                <td colspan="2">Monedas</td>
+                <td>$100=</td>
+                <td><input class="w3-xlarge" type="number" name="ciend" id="" value="0"></td>
+            </tr>
+            <tr>
+                <td>Total=</td>
+                <td><input class="w3-xlarge" type="number" name="monedas" id="" value="0"></td>
+                <td rowspan="2" colspan="2"><a href="/api/logout"><input type="submit" value= "Guardar"></a></td>
+            </tr>
+        </table>
+        </div>       
+    </form>
+    </div>
+    <div style="float: right; width: 30%;">
+        <a href="/inicio"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>
+</div>

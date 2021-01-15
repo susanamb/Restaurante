@@ -1,0 +1,26 @@
+<br><br><br>
+    <h1 class="display-3" style="text-align: center;">Arqueo de caja</h1>
+<table id="myTable" class="table table-striped table-responsive-md btn-table" style="background-color: #ffff;">
+    <thead>
+        <tr>
+            <th class="th-sm">Usuario</th>
+            <th class="th-sm">MonedaNacional</th>
+            <th class="th-sm">Dolar</th>
+            <th class="th-sm">Tarjeta</th>
+            <th class="th-sm">Venta total</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {{#arqueo}}
+        <tr> <br>
+            <td>{{usuario}}</td>
+            <td>{{mn}}</td>
+            <td>{{dll}}</td>
+            <td>{{tarjeta}}</td>
+            <td>{{totalvtas}}</td>           
+        </tr>
+        {{/arqueo}}
+    </tbody>
+</table>
+        <a href="/api/admin"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>

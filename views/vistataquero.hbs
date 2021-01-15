@@ -1,0 +1,33 @@
+    <br><br><br>
+    <h1 class="display-3" style="text-align: center;">Ordenes</h1>
+<table id="myTable" align ='center' class="table table-striped table-responsive-md btn-table" style="background-color: #ffff;width:70%; ">
+    <thead>
+        <tr>
+            <th class="th-sm">Mesa</th>
+            <th class="th-sm">Cantidad</th>
+            <th class="th-sm">Descripcion</th>
+            <th class="th-sm"></th>
+            <th class="th-sm">Opciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {{#ordenes}}
+        <tr> <br>
+            <td>{{nOrden}}</td>
+            <td>{{cantidad}}</td>
+            <td>{{descripcion}}</td>
+            <td>{{notas}}</td>
+            <td>
+                <a href="/api/entrega/{{nOrden}}/{{descripcion}}" class="btn btn-primary">Entregar</a>
+            </td>
+        </tr>
+        {{/ordenes}}
+    </tbody>
+    <tr>
+        <td colspan="5" style="text-align: right;">* Mesas 0 son ordenes para llevar</td>
+    </tr>
+</table>
+<div style="float: right; width: 30%;">
+    <a href="/inicio"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>
+</div>

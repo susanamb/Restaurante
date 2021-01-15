@@ -1,0 +1,25 @@
+<body>
+    <div class="w3-container" style="margin-top:80px; margin-left: 15%;" id="showcase">
+    <h1 class="w3-jumbo"><b>{{menu}}</b></h1>
+    <h1 class="w3-xxxlarge w3-text-blue-gray"><b>Administra</b></h1>
+    <hr style="width:50px;border:5px solid paleturquoise" class="w3-round">
+  </div>
+  {{#if menu}}
+  <div class="w3-row-padding" style="margin-left:10%">
+    <div class="w3-half">
+        {{#if user}}
+        <a class="men" href="{{user}}"><button class="exp">Agregar nuevo</button></a>
+        {{else}}
+        <a class="men" href="mas{{menu}}"><button class="exp">Agregar nuevo</button></a>
+        {{/if}}
+        <a class="men" href="/api/ver{{menu}}"><button class="exp">Consultar/Editar</button></a>
+        {{#if surte }}
+        <a class="men" href="/api/surtir"><button class="exp">Surtir</button></a>
+        {{/if}}
+    </div>
+  </div>
+  {{/if}}
+  <div style="float: right; width: 35%; margin-top:7%;">
+        <a href="/api/admin"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>
+</div>
+</body>

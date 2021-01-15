@@ -1,0 +1,19 @@
+<div class="jumbotron" style=" text-align:center; width: 70%; margin-left:15%; margin-right:15%;">
+  <h1 class="display-4">Tipo de cambio</h1>
+  {{#if TipoCambio}}
+  {{#TipoCambio}}
+    <h1 class="display-4">${{tc}}</h1>
+    <hr class="my-4">
+    <p>Ultima actualizacion: {{Fecha}}</p>
+  {{/TipoCambio}}
+  {{#else}}
+  <h1 class="display-4">${{dll}}</h1>
+    <hr class="my-4">
+    <p>Ultima actualizacion: hoy</p>{{/else}}
+  {{/if}}
+  
+  <a class="btn btn-primary btn-lg" href="/api/editatc" role="button">Cambiar</a>&nbsp&nbsp<a class="btn btn-primary btn-lg" href="/api/admin" role="button">Regresar</a><br>
+  <br><a class="btn btn-outline-info" href="/vertiposcambio" role="button">Ver historial</a>
+
+
+</div>

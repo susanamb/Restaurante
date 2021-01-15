@@ -1,0 +1,49 @@
+<body>
+    <div class="w3-container" style="margin-top:80px; margin-left: 15%;" id="showcase">
+    <h1 class="w3-jumbo"><b>Gerente</b></h1>
+    <h1 class="w3-xxxlarge w3-text-blue-gray"><b>Moderador</b></h1>
+    <hr style="width:50px;border:5px solid paleturquoise" class="w3-round">
+</div>
+{{#if message }}
+        <div class="alert alert-danger" role="alert" style="text-align: center">
+          <h1> {{message}} :</h1>
+           {{#faltantes}}
+          <h1>{{nombre}}</h1>
+          {{/faltantes}}
+            <a class="men" href="/api/surtir" >Surtir</a>
+        </div>
+        {{/if}}
+        <div class="w3-row-padding contenedor" style="margin-left:10%">
+              <form action="/api/menuconsulta" method="POST">
+              <a class="men" ><input type="submit" name="menu" value="productos" class="exp" ></a>
+              </form>
+ 
+              <form action="/api/menuconsulta" method="POST">        
+              <a class="men" ><input type="submit" name="menu" value="usuarios" class="exp" ></a>
+              </form>
+              <form action="/api/menuconsulta" method="POST">
+              <a class="men" ><input type="submit" name="menu" value="comidas" class="exp" ></a>     
+              </form>
+            <div>
+              <a class="men" href="/api/vereporte"><button class="exp"> Ver reporte</button></a>
+            </div>
+            <div>
+              <a class="men" href="/api/tipocambio" role="button"><button class="exp">Tipo de cambio</button></a>
+            </div>
+            <div>
+              <a class="men" href="/api/vereportegral"><button class="exp">ReporteGeneral</button></a>
+            </div>
+            <div>
+              <a class="men" href="/api/arqueocaja"><button class="exp">Arqueo de caja</button></a>
+            </div>
+            <div>
+              <a class="men" href="/api/vercortes"><button class="exp">Cortes de caja</button></a>
+            </div>
+            <div>
+              <a class="men" href="/api/cierretienda"><button class="exp">Cierre de tienda</button></a>
+            </div>
+            <div> 
+              <a class="men" href="/api/logout"><button class="exp">Cerrar sesion</button></a>
+            </div>
+      </div>
+</body>

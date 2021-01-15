@@ -1,0 +1,67 @@
+<body>
+    <div class="w3-container" style="margin-top:80px; margin-left: 15%;" id="showcase">
+    <h1 class="w3-jumbo"><b>Usuarios</b></h1>
+    <h1 class="w3-xxxlarge w3-text-blue-gray"><b>Consulta/Edita</b></h1>
+    <hr style="width:50px;border:5px solid paleturquoise" class="w3-round">
+  </div> 
+  <div class="w3-row-padding" style="margin-left:10%">
+      {{#if message }}
+        <div class="alert alert-danger" role="alert" style="width: 70%;">
+          <h1> {{message}}</h1>
+        </div>
+        {{/if}}
+{{#usuario}}
+<form action="/api/usuario/{{usuario}}?_method=PUT" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+
+    <table class="w3-ul w3-light-grey w3-center" style="width: 70%; border:1;" border="1">       
+        <tr>
+            <td>Usuario</td>
+            <td><input type="text" id="login" class="fadeIn second" disabled name="id" value="{{usuario}}" ></td>
+        </tr>
+        <tr>
+            <td>Nombre</td>
+           <td> <input type="text" id="login" class="fadeIn second" name="nombre" value="{{nombre}}" required></td>
+        </tr>
+        <tr>
+            <td>Apellido</td>
+            <td><input type="text" id="login" class="fadeIn second" name="apellido" value="{{apellido}}" required></td>
+        </tr>
+        <tr> 
+            <td><div class="form-group">
+        <label for="_id">Puesto</label></td>
+        <td>
+        <select class= "form-group" name="puesto" id="category">
+            <option selected>{{puesto}}</option>
+            <option >Mesero</option>
+            <option >Cajero</option>
+            <option >Taquero</option>
+            <option >Gerente</option>
+        </select></td>
+    </div></tr>
+        <tr>
+            <td>Clave</td>
+            <td><input type="password" id="password" class="fadeIn third" name="clave" placeholder="Clave" pattern="[A-Za-z0-9_-]{1,15}" maxlength="10" required></td>
+        </tr>
+        <tr>
+            <td>Confirma clave</td>
+            <td><input type="password" id="confirmapassword" class="fadeIn third" name="confirmaclave" placeholder="Confirma clave" pattern="[A-Za-z0-9_-]{1,15}" maxlength="10" required></td>
+        </tr>
+        <tr>
+            <td>Clave Gerente</td>
+            <td><input type="password" id="login" class="fadeIn second" name="claveg" placeholder="Clave Gerente" required></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" name="accion" value="Modifica" class="btn btn-primary">
+             
+            </td>
+        </tr>
+        
+    </table>
+   {{/usuario}}
+</form>
+</div>
+<div style="float: right; width: 30%;">
+    <a href="/api/admin"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>
+</div>
+</body>

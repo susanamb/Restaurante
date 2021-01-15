@@ -1,0 +1,33 @@
+    <br><br><br>
+    <h1 class="display-3" style="text-align: center;">Comidas</h1>
+<table id="myTable" class="table table-striped table-responsive-md btn-table" style="background-color: #ffff;">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th class="th-sm">Nombre</th>
+            <th class="th-sm">Descripcion</th>
+            <th class="th-sm">Precio</th>
+            <th class="th-sm">Opciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {{#comidas}}
+        <tr> <br>
+            <td>{{id}}</td>
+            <td>{{nombre}}</td>
+            <td>{{descripcion}}</td>
+            <td>{{precio}}</td>
+            <td>
+                <form action="/api/comida/{{id}}" method="GET">
+                    <button class= "btn btn-primary" type="submit">Editar</button>
+                </form>
+            </td>
+            <td>
+                <a href="/api/borracomida/{{id}}" class="btn btn-primary">Eliminar</a>
+            </td>
+        </tr>
+        {{/comidas}}
+    </tbody>
+</table>
+        <a href="/api/admin"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>

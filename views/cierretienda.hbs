@@ -1,0 +1,21 @@
+<div class="alert alert-{{accion}}" role="alert" style="text-align: center;">
+  <h3 class="alert-heading">{{message}}</h3>
+  <hr>
+  {{#if user}}
+  <p class="mb-0">{{user}}</p>
+  {{/if}}
+  {{#if no}}
+    <p class="mb-0">Verifique que todo este en orden para realizar el cierre de tienda</p>
+    <div style="float: right; width: 30%;">
+    <a href="/api/admin"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>
+</div>{{/if}}
+    {{#if si}}
+      <p class="mb-0">Las&nbsp{{si}}&nbsp se han guardado correctamente.</p>
+      <div style="float: right; width: 30%;">
+        <a href="/api/logout"><button type="button" class="btn btn-primary btn-lg">Cerrar sesion</button></a>
+        </div>{{/if}}
+
+  
+    
+
+</div>

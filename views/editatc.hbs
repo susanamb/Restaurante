@@ -1,0 +1,19 @@
+<body>
+    <div class="w3-container" style="margin-top:80px; margin-left: 15%;" id="showcase">
+    <h1 class="w3-jumbo"><b>Administrativo</b></h1>
+    <h1 class="w3-xxxlarge w3-text-blue-gray"><b>Tipo de cambio</b></h1>
+    <hr style="width:50px;border:5px solid paleturquoise" class="w3-round">
+  </div>
+  <div class="jumbotron jumbotron-fluid" style="width: 70%; margin-left:15%; margin-right:15%;">
+  <div class="container">
+    <form action="/api/cambiatc" method="POST">
+        <p class="lead">Introduzca nuevo tipo de cambio:</p>
+        $<input class="lead" type="number" name="tc" id="" require step='0.01' value='00.00' placeholder='0.00' max="30" style="width: 50%;">
+        <input type="submit" class="fadeIn fourth" name="accion" value="Actualiza"/>
+
+    </form>
+  </div>
+  <div style="float: right; width: 35%;">
+        <a href="/api/admin"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>
+</div>
+</div>

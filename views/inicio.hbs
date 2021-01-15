@@ -1,0 +1,148 @@
+<div class="">
+  <!-- Sidebar/menu -->
+  <nav class="w3-sidebar w3-sand w3-collapse w3-top w3-large w3-padding"
+    style="z-index:3;width:300px;font-weight:bold; margin-left: 0;" id="mySidebar"><br>
+
+    <div class="w3-container">
+      <h3 class="w3-padding-64"><b>{{usuario}}</b></h3>
+
+    </div>
+    <div class="w3-bar-block">
+
+      <!-- <a><input type="radio" name="leo" id="" class="w3-bar-item w3-button w3-hover-white">leo</a> -->
+      <a href="/inicio" class="w3-bar-item w3-button w3-hover-red">Nuevo pedido</a>
+      <a href="/api/vercomandas" class="w3-bar-item w3-button w3-hover-red">Ver comandas</a>
+      <a href="/cortecaja" class="w3-bar-item w3-button w3-hover-red">Corte de caja</a>
+      <a href="/api/vistataquero" class="w3-bar-item w3-button w3-hover-red">Ver ordenes</a>
+      <a href="/api/logout" class="w3-bar-item w3-button w3-hover-red">Cerrar turno</a>
+    </div>
+  </nav>
+
+  <!-- PAGE CONTENT -->
+
+  <nav class="navbar navbar-expand-lg navbar-light" id="navar">
+    <a class="navbar-brand" href="#">{{usuario}}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" href="/inicio">Nuevo pedido <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/api/vercomandas">Ver comandas</a>
+        <a class="nav-link" href="/cortecaja">Corte de caja</a>
+        <a class="nav-link" href="/api/vistataquero">Ver ordenes</a>
+        <a class="nav-link" href="/api/logout">Cerrar turno</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="w3-main" style="margin-left:340px; margin-right:40px">
+
+    <!-- Header -->
+    {{#if message }}
+    <div class="alert alert-warning" role="alert" style="width: 70%;">
+      <h1> {{message}}</h1>
+    </div>
+    {{/if}}
+    <div class="w3-container" style="margin-top:80px" id="showcase">
+      <h1 class="w3-jumbo w3-text-red"><b>Tacos de birria</b></h1>
+      <h1 class="w3-xxxlarge w3-text-deep-orange"><b>Menu</b></h1>
+      <hr style="width:50px;border:5px solid paleturquoise" class="w3-round">
+    </div>
+    <div class="w3-row-padding">
+      <div class="w3-half">
+        <a class="men" href="#menu"><button class="exp">Express</button></a><br><br>
+        <a class="men" href="#smesa"><button class="exp">Para aqui</button></a><br>
+      </div>
+    </div>
+    <br><br><br>
+    {{#if message }}
+    <div class="alert alert-warning" role="alert" style="width: 70%;">
+      <h1> {{message}}</h1>
+    </div>
+    {{/if}}
+    <h1 id="smesa">Selecciona la mesa</h1>
+    <form action="/api/pedido" method="POST">
+
+      <div class="btn-group btn-group-toggle btn-lg" data-toggle="buttons">
+        <label class="btn btn-secondary btn-lg">
+          <input type="radio" name="mesa" id="option1" value="1" /> #1
+        </label>
+        <label class="btn btn-secondary btn-lg">
+          <input type="radio" name="mesa" id="option2" value="2" /> #2
+        </label>
+        <label class="btn btn-secondary btn-lg">
+          <input type="radio" name="mesa" id="option3" value="3" /> #3
+        </label>
+        <label class="btn btn-secondary btn-lg">
+          <input type="radio" name="mesa" id="option4" value="4" /> #4
+        </label>
+        <label class="btn btn-secondary btn-lg">
+          <input type="radio" name="mesa" id="option5" value="5"> #5
+        </label>
+        <label class="btn btn-secondary btn-lg">
+          <input type="radio" name="mesa" id="option6" value="6"> #6
+        </label>
+        <label class="btn btn-secondary btn-lg">
+          <input type="radio" name="mesa" id="option7" value="7"> #7
+        </label>
+        <label class="btn btn-secondary btn-lg">
+          <input type="radio" name="mesa" id="option8" value="8"> #8
+        </label>
+      </div>
+      <div class="w3-container" style="margin-top:80px" id="showcase">
+        <h1 id="menu" class="w3-xxxlarge w3-text-deep-orange"><b>Menu</b></h1>
+        <hr style="width:50px;border:5px solid paleturquoise" class="w3-round">
+      </div>
+      <!--- Photo grid (modal) --->
+      <div class="w3-row-padding">
+        <div class="w3-half">
+          <a href="#comidas"><img class="pos" src="/img/orden.png" style="width:80%">
+            <h3 class="tex">Comidas</h3>
+          </a>
+          <a href="#sodas"><img class="pos" src="/img/sodas.png" style="width:80%"></a>
+        </div>
+      </div>
+
+      <!---COMIDAAAAAAAAAASS--->
+      <div class="w3-container" style="margin-top:80px" id="showcase">
+        <h1 id="comidas" class="w3-xxxlarge w3-text-deep-orange"><b>Comidas</b></h1>
+        <hr style="width:50px;border:5px solid paleturquoise" class="w3-round">
+      </div>
+      {{#comidas}}
+      <div class="w3-col m4 w3-margin-bottom">
+        <img src="/img/{{img}}" style="width:300px">
+        <div class="w3-container">
+          <h3>{{nombre}}</h3><label>${{precio}}.00</label>
+          <p class="w3-opacity" style="width: 250px;">Cantidad: <br>
+            <label class="w3-opacity" for="todo" style="padding-top:6%;padding-bottom:6%;">Con todo:</label><input type="number" id="todo" min="0" max="10" name="{{name}}" style="width: 120px;float:right;">
+            <label class="w3-opacity" for="scebolla" style="padding-top:6%;padding-bottom:6%;">Sin cebolla:</label><input type="number" id="scebolla" min="0" max="10" name="{{name}}sc" style="width: 120px;float:right;">
+            <label class="w3-opacity" for="ssalsa" style="padding-top:6%;padding-bottom:6%;">Sin salsa:</label><input type="number" id="ssalsa" min="0" max="10" name="{{name}}ss" style="width: 120px;float:right;">
+            <label class="w3-opacity" for="sverdura" style="padding-top:6%;padding-bottom:6%;">Sin verdura:</label><input type="number" id="sverdura" min="0" max="10" name="{{name}}sv" style="width: 120px;float:right;">
+
+          </p>
+        </div>
+      </div>
+      {{/comidas}}
+
+      <!---SODAAAAAS--->
+      <div class="w3-container" style="margin-top:80px" id="showcase">
+        <h1 id="sodas" class="w3-xxxlarge w3-text-deep-orange"><b>Bebidas</b></h1>
+        <hr style="width:50px;border:5px solid paleturquoise" class="w3-round">
+      </div>
+      {{#productos}}
+      <div class="w3-col m4 w3-margin-bottom">
+        <img src="/img/{{img}}" style="width:300px">
+        <div class="w3-container">
+          <h3>{{nombre}}</h3><label>${{precio}}.00</label>
+          <p class="w3-opacity" style="width: 250px;">Cantidad:<input type="number" min="0" max="10" name="{{name}}">
+          </p>
+        </div>
+        
+      </div>
+      {{/productos}}
+  </div>
+</div>
+<p><a href="cuenta"><button type="submit" class="btn btn-primary">Guardar</button></a></p>
+</form>

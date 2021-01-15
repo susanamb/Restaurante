@@ -1,0 +1,11 @@
+    <br><br><br><br><br>
+    <div class="jumbotron jumbotron-fluid" style="width: 70%; margin-left:15%; margin-right:15%; background-color:#E6F4EA">
+      {{#if cosa}}
+        <h1 style="text-align: center;">{{cosa}}&nbsp{{accion}}do correctamente</h1>
+      {{/if}}
+      {{#if com}}
+        <h1 style="text-align: center;">Este pedido no se puede cambiar porque ya se entrego</h1>
+        {{/if}}
+          <hr class="my-4">
+        <a class="btn btn-primary btn-lg" style="margin-left:30%; margin-right:30%;width:40%;" href="/api/{{a}}" role="button">Aceptar</a>
+    </div>

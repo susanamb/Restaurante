@@ -1,0 +1,53 @@
+<div class="w3-container" style="margin-top:80px; text-align:center" id="showcase">
+    <h1 class="w3-jumbo" ><b>Tacos de birria</b></h1>
+    <h1 class="w3-xxxlarge w3-text-blue-gray"><b>Cuenta</b></h1>
+  </div>
+
+  <div class="w3-row-padding" style="width:70%; margin-left:15%;">
+    <div class="w3-half w3-margin-bottom">
+      <ul class="w3-ul w3-light-grey w3-center">
+                  {{#if message }}
+        <div class="alert alert-danger" role="alert" style="width: 100%;">
+          <h1> {{message}}</h1>
+        </div>
+            <a href="/api/vercomandas"><button type="button" class="btn btn-primary btn-lg">Regresar</button></a>
+
+        {{/if}}
+        {{#comanda}}
+
+        <li class="w3-light-blue w3-xlarge w3-padding-32">Cuenta No: {{nOrden}}</li>
+        <li class="w3-padding-8"><h1>Total a pagar: ${{cobro}} </h1><br><h3 class="h5" style="color:grey">Total en dólar: ${{ dll }}</h2></li>
+
+
+
+        <form action="/api/cambio/{{nOrden}}" method="POST">
+        </li>
+        <br>
+            <table align="center" border="1" >
+              <tr>
+                <td><h1>Efectivo</h1></td>
+                <td><input type="number" name="mn" value="0"></td>
+            </tr>
+            <tr>
+                <td><h1>Dolar</h1></td>
+                <td><input type="number" name="dll" max="100" value="0"></td>
+              </tr>
+            <tr>
+                <td><h1>Tarjeta</h1></td>
+                <td><input type="number" name="tarjeta"  max="{{cobro}}" value="0"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button class= "btn btn-primary" type="submit">Aceptar</button>
+                </td>
+                {{/comanda}}            
+                </tr>
+            </table>
+            <br><label style="color:gray">Tipo de Cambio:$ {{tc.tc}}</label>
+        </form>
+            <a href="/api/vercomandas"><button type="button" class="btn btn-outline-info">Regresar</button></a>
+
+        </li>   
+      </ul>
+    </div>
+  </div>
